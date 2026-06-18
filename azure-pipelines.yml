@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: classicagent-test
 
 steps:
 - task: ArchiveFiles@2
