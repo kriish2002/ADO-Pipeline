@@ -9,7 +9,7 @@ steps:
 - checkout: self
 
 - script: |
-    echo "Code checked out successfully"
+    echo "Code checked out successfully updated"
     dir
   displayName: 'Verify Source Code'
 
