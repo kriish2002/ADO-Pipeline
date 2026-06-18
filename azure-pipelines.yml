@@ -11,4 +11,16 @@ steps:
 - script: |
     echo "Code checked out successfully updated"
     dir
-  displayName: 'Verify Source Code"
+  displayName: 'Verify Source Code'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: '$(Build.ArtifactStagingDirectory)/website.zip'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'website'
